@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
+    public bool spawn = true;
     public Bullet bullet;
     public float minRotation, maxRotation, rate, bulletSpeed;
     public int numberOfBullet;
-    public Vector2 bulletVelocity;
 
     private float timer = 0;
     public float[] rotations ;
 
     private void Update()
     {
-        SetRotations();
-        if(timer >= rate)
+        if (spawn)
         {
-            SpawnBullet();
-            timer = 0;
+            SetRotations();
+            if (timer >= rate)
+            {
+                SpawnBullet();
+                timer = 0;
+            }
+            timer += Time.deltaTime;
         }
-        timer += Time.deltaTime;
     }
 
     private float[] SetRotations()
