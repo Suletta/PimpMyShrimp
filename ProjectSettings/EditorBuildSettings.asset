@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sula/Scenes/Level 1.unity
     guid: 5484b732dbb74094a9e4d4b9fc12c4d4
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6747862f0f4128747aff7be8d0530845,
+      type: 2}
