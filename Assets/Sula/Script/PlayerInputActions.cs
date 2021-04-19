@@ -817,6 +817,33 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Testing"",
+            ""id"": ""ca533821-97b1-4c07-bfdc-5fd2feee577a"",
+            ""actions"": [
+                {
+                    ""name"": ""Spacebar"",
+                    ""type"": ""Button"",
+                    ""id"": ""23ef86b4-a895-4017-b7d8-d577d0b267e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ad9a5750-9af5-47e9-88d2-e8c6c872bca9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spacebar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -903,6 +930,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_OpenGameMenu = m_Menu.FindAction("OpenGameMenu", throwIfNotFound: true);
         m_Menu_HideGameMenu = m_Menu.FindAction("HideGameMenu", throwIfNotFound: true);
+        // Testing
+        m_Testing = asset.FindActionMap("Testing", throwIfNotFound: true);
+        m_Testing_Spacebar = m_Testing.FindAction("Spacebar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1143,6 +1173,39 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+
+    // Testing
+    private readonly InputActionMap m_Testing;
+    private ITestingActions m_TestingActionsCallbackInterface;
+    private readonly InputAction m_Testing_Spacebar;
+    public struct TestingActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public TestingActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Spacebar => m_Wrapper.m_Testing_Spacebar;
+        public InputActionMap Get() { return m_Wrapper.m_Testing; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TestingActions set) { return set.Get(); }
+        public void SetCallbacks(ITestingActions instance)
+        {
+            if (m_Wrapper.m_TestingActionsCallbackInterface != null)
+            {
+                @Spacebar.started -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
+                @Spacebar.performed -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
+                @Spacebar.canceled -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
+            }
+            m_Wrapper.m_TestingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Spacebar.started += instance.OnSpacebar;
+                @Spacebar.performed += instance.OnSpacebar;
+                @Spacebar.canceled += instance.OnSpacebar;
+            }
+        }
+    }
+    public TestingActions @Testing => new TestingActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1211,5 +1274,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     {
         void OnOpenGameMenu(InputAction.CallbackContext context);
         void OnHideGameMenu(InputAction.CallbackContext context);
+    }
+    public interface ITestingActions
+    {
+        void OnSpacebar(InputAction.CallbackContext context);
     }
 }

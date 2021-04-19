@@ -2,68 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
 
     [SerializeField]
     GameObject gameMenu;
-
-    public InputAction OpenMenu;
-    public InputAction HideMenu;
-
-
-    private void OnEnable()
-    {
-        OpenMenu.Enable();
-        HideMenu.Enable();
-
-        
-    }
-    private void OnDisable()
-    {
-        OpenMenu.Disable();
-        HideMenu.Disable();
-    }
+    Canvas canvas;
 
     void Start()
     {
-        //gameMenu.SetActive(false);
+        canvas = gameMenu.GetComponent<Canvas>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //OpenGameMenu();
-        //HideGameMenu();
-
-
     }
 
     public void OpenGameMenu()
     {
-        if (OpenMenu.triggered)
+        if (canvas.enabled == false)
         {
 
         //pause game
         //activate menu
-        gameMenu.SetActive(true);
+        //gameMenu.SetActive(true);
+        canvas.enabled = true;
+        Debug.Log("mostro");
         }
+
     }
 
     public void HideGameMenu()
     {
-        //if (HideMenu.triggered)
-        //{
+        if (canvas.enabled)
+        {
+            //togli pausa
+        canvas.enabled = false;
         Debug.Log("nascondo");
-        gameMenu.SetActive(false);
-        //}
+        }
+
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 

@@ -804,6 +804,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Testing",
+            "id": "ca533821-97b1-4c07-bfdc-5fd2feee577a",
+            "actions": [
+                {
+                    "name": "Spacebar",
+                    "type": "Button",
+                    "id": "23ef86b4-a895-4017-b7d8-d577d0b267e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad9a5750-9af5-47e9-88d2-e8c6c872bca9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spacebar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

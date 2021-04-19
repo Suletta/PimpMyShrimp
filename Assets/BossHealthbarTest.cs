@@ -14,14 +14,19 @@ public class BossHealthbarTest : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.spaceKey.isPressed)
-        {
-            TakeDamage(10);
-            Debug
-        }
+        //bool isSpacePressed = false;
+        //if (Keyboard.current.spaceKey.isPressed && isSpacePressed == false)
+        //{
+        //    TakeDamage(10);
+        //    Debug.Log("danneggiato");
+        //    isSpacePressed = true;
+        //}
+        //else
+        //{
+        //    isSpacePressed = false;
+        //}
     }
 
     public void TakeDamage(int damageInflicted)
