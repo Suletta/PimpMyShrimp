@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f64f2759165174a8bd83e594e98a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn: 1
   bullet: {fileID: 2822804244305467372, guid: 11c6d2f9d944ab949b1d723cbe90cdc4, type: 3}
   minRotation: 0
-  maxRotation: 180
+  maxRotation: 360
   rate: 0.5
-  bulletSpeed: 1
-  numberOfBullet: 5
-  bulletVelocity: {x: 0, y: 0}
+  bulletSpeed: 10
+  numberOfBullet: 3
   rotations:
   - 0
   - 0
@@ -161,7 +161,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4965973329009330126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 731f9659792fd9a40a48972c896d7074, type: 2}
   m_CullingMode: 0

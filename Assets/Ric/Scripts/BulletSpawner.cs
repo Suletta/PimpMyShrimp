@@ -43,7 +43,7 @@ public class BulletSpawner : MonoBehaviour
     {
         for (int i = 0; i < numberOfBullet; i++)
         {
-            Bullet b = Instantiate(bullet,new Vector3(), new Quaternion() );
+            Bullet b = Instantiate(bullet,new Vector3(), Quaternion.Euler (0,0,0 ), transform );
             b.speed = bulletSpeed;
             b.rotation = rotations[i];
             Destroy(b.gameObject, 10);
