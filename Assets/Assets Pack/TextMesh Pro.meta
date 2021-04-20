@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Assets Pack/TextMesh Pro.meta
 guid: f54d1bd14bd3ca042bd867b519fee8cc
+=======
+guid: 635963991d7b9b1428cafce4739d46c5
+>>>>>>> Ric:Assets/LUCAVFX/Shaders.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
