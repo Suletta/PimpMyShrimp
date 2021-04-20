@@ -6,6 +6,9 @@ using TMPro;
 
 public class UpdatePlayerStats : MonoBehaviour
 {
+    //STO SCRIPT POTREBBE ESSERE UNITO A QUELLO CHE AGGIORNA LA UI DEL NEMICO, 
+    //PER ORA STA SULLA SIDEBAR RIGHT CHE è QUELLA DEL PLAYER
+
     [SerializeField]
     GameObject[] playerHearts;
     List<Image> heartsList = new List<Image>();
@@ -16,7 +19,6 @@ public class UpdatePlayerStats : MonoBehaviour
 
     [SerializeField]
     GameObject[] playerPowerUp;
-
     List<TextMeshProUGUI> playerPowerUpText = new List<TextMeshProUGUI>();
 
     //PRENDERE REF DELLO SCRIPT DEL PLAYER CON TUTTE LE STATS
@@ -26,35 +28,41 @@ public class UpdatePlayerStats : MonoBehaviour
 
     void Start()
     {
+        GetUiElements();
+
+        // Setto tutti i valori in start
+        UpdateHearts(playerStats.playerLives);
+        UpdateDamageValue(playerStats.playerDamage);
+
+        //le string servono a "taggare" il tipo di power-up per essere utilizzati come casi nello switch
+        //è un po un meme ma vabbè, mi andava di usare quello
+        UpdatePowerUps(playerStats.damagePU, "damage");
+        UpdatePowerUps(playerStats.fireratePU, "firerate");
+        UpdatePowerUps(playerStats.defencePU, "defence");
+
+    }
+
+    private void GetUiElements()
+    {
         //piglio tutti i testi e elementi vari dai game object
         playerDamageText = playerDamage.GetComponent<TextMeshProUGUI>();
 
-
-
-        //    //metto i testi degli oggetti nell'array dentro la mia lista
-        //    foreach (var powerUp in playerPowerUp)
-        //    {
-        //        playerPowerUpText.Add(powerUp.GetComponent<TextMeshProUGUI>());            
-        //    }
+        //metto i testi degli oggetti nell'array dentro la mia lista
+        foreach (var powerUp in playerPowerUp)
+        {
+            playerPowerUpText.Add(powerUp.GetComponent<TextMeshProUGUI>());
+        }
 
         //prendo le 4 immagini
         foreach (var heart in playerHearts)
         {
             heartsList.Add(heart.GetComponent<Image>());
         }
-
-        
-        // Setto tutti i valori in start
-        UpdateHearts(playerStats.playerLives);
-        UpdateDamageValue(playerStats.playerDamage);
-
-        //    UpdatePowerUps(playerStats.damagePU, "damage");
-        //    UpdatePowerUps(playerStats.fireratePU, "firerate");
-        //    UpdatePowerUps(playerStats.defencePU, "defence");
-
     }
 
-   public void UpdateHearts(int playerLives)
+    //METODI DA CHIAMARE PER AGGIORNALE LA UI QUANDO CAMBIANO I VALORI DELLE PLAYER STATS :)
+
+    public void UpdateHearts(int playerLives)
     {
         switch (playerLives)
         {
@@ -98,32 +106,18 @@ public class UpdatePlayerStats : MonoBehaviour
     }
 
     public void UpdatePowerUps(int currentQuantity, string tag)
-    {
-        //if (tag == "damage")
-        //{
-        //    playerPowerUpText[1].text = currentQuantity.ToString();
-        //}
-        //if (tag == "firerate")
-        //{
-        //    playerPowerUpText[2].text = currentQuantity.ToString();
-        //}
-        //if (tag == "defence")
-        //{
-        //    playerPowerUpText[3].text = currentQuantity.ToString();
-        //}
-        
-
+    {      
         //A seconda del tag del powerup aggiorno il testo con la quantità attuale del powerup
         switch (tag)
         {
             case "damage":
-                playerPowerUpText[1].text = "X " + currentQuantity.ToString();
+                playerPowerUpText[0].text = "X " + currentQuantity.ToString();
                 break;
             case "firerate":
-                playerPowerUpText[2].text = "X " + currentQuantity.ToString();
+                playerPowerUpText[1].text = "X " + currentQuantity.ToString();
                 break;
             case "defence":
-                playerPowerUpText[3].text = "X " + currentQuantity.ToString();
+                playerPowerUpText[2].text = "X " + currentQuantity.ToString();
                 break;
             default:
                 break;

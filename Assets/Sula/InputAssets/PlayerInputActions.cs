@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Sula/Script/PlayerInputActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Sula/InputAssets/PlayerInputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -347,6 +347,30 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""328dba10-b59f-466c-8ced-6db4cf298bec"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HideGameMenu"",
+                    ""type"": ""Value"",
+                    ""id"": ""11d04bb7-a358-4a42-8fb3-5b6b2714ecea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""OpenGameMenu"",
+                    ""type"": ""Value"",
+                    ""id"": ""41da4546-e1b9-4f18-a87d-15eefb51b1c5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Spacebar"",
+                    ""type"": ""Button"",
+                    ""id"": ""cda18dbd-7bc3-499a-bc09-c45f5071fce2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -769,34 +793,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Menu"",
-            ""id"": ""9bb8e54e-8ec4-45aa-8cd7-fb0c976ff997"",
-            ""actions"": [
-                {
-                    ""name"": ""OpenGameMenu"",
-                    ""type"": ""Value"",
-                    ""id"": ""dcce3706-bf19-417f-b6df-7f13902ab59e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 },
                 {
-                    ""name"": ""HideGameMenu"",
-                    ""type"": ""Value"",
-                    ""id"": ""e58b5a3a-7041-4dea-9542-4fb6f7c682ad"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
                     ""name"": """",
-                    ""id"": ""f1c893e5-dace-4496-935b-cbca30bc2662"",
+                    ""id"": ""cad5947b-1439-4d54-9913-cac6c3721a95"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -807,7 +807,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e9fcf273-738f-45b6-b2e2-3606ecf9cacf"",
+                    ""id"": ""83a2e8a1-a447-43e6-ae05-cf5bf7601647"",
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -815,26 +815,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""HideGameMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Testing"",
-            ""id"": ""ca533821-97b1-4c07-bfdc-5fd2feee577a"",
-            ""actions"": [
-                {
-                    ""name"": ""Spacebar"",
-                    ""type"": ""Button"",
-                    ""id"": ""23ef86b4-a895-4017-b7d8-d577d0b267e5"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""ad9a5750-9af5-47e9-88d2-e8c6c872bca9"",
+                    ""id"": ""ede80318-d48c-4278-a31f-444834bcb5a7"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -926,13 +910,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // Menu
-        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_OpenGameMenu = m_Menu.FindAction("OpenGameMenu", throwIfNotFound: true);
-        m_Menu_HideGameMenu = m_Menu.FindAction("HideGameMenu", throwIfNotFound: true);
-        // Testing
-        m_Testing = asset.FindActionMap("Testing", throwIfNotFound: true);
-        m_Testing_Spacebar = m_Testing.FindAction("Spacebar", throwIfNotFound: true);
+        m_UI_HideGameMenu = m_UI.FindAction("HideGameMenu", throwIfNotFound: true);
+        m_UI_OpenGameMenu = m_UI.FindAction("OpenGameMenu", throwIfNotFound: true);
+        m_UI_Spacebar = m_UI.FindAction("Spacebar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1041,6 +1021,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_HideGameMenu;
+    private readonly InputAction m_UI_OpenGameMenu;
+    private readonly InputAction m_UI_Spacebar;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1055,6 +1038,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @HideGameMenu => m_Wrapper.m_UI_HideGameMenu;
+        public InputAction @OpenGameMenu => m_Wrapper.m_UI_OpenGameMenu;
+        public InputAction @Spacebar => m_Wrapper.m_UI_Spacebar;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1094,6 +1080,15 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @TrackedDeviceOrientation.started -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
+                @HideGameMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnHideGameMenu;
+                @HideGameMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnHideGameMenu;
+                @HideGameMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnHideGameMenu;
+                @OpenGameMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenGameMenu;
+                @OpenGameMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenGameMenu;
+                @OpenGameMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnOpenGameMenu;
+                @Spacebar.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
+                @Spacebar.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
+                @Spacebar.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1128,84 +1123,19 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
-            }
-        }
-    }
-    public UIActions @UI => new UIActions(this);
-
-    // Menu
-    private readonly InputActionMap m_Menu;
-    private IMenuActions m_MenuActionsCallbackInterface;
-    private readonly InputAction m_Menu_OpenGameMenu;
-    private readonly InputAction m_Menu_HideGameMenu;
-    public struct MenuActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public MenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @OpenGameMenu => m_Wrapper.m_Menu_OpenGameMenu;
-        public InputAction @HideGameMenu => m_Wrapper.m_Menu_HideGameMenu;
-        public InputActionMap Get() { return m_Wrapper.m_Menu; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
-        public void SetCallbacks(IMenuActions instance)
-        {
-            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
-            {
-                @OpenGameMenu.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenGameMenu;
-                @OpenGameMenu.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenGameMenu;
-                @OpenGameMenu.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenGameMenu;
-                @HideGameMenu.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnHideGameMenu;
-                @HideGameMenu.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnHideGameMenu;
-                @HideGameMenu.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnHideGameMenu;
-            }
-            m_Wrapper.m_MenuActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @OpenGameMenu.started += instance.OnOpenGameMenu;
-                @OpenGameMenu.performed += instance.OnOpenGameMenu;
-                @OpenGameMenu.canceled += instance.OnOpenGameMenu;
                 @HideGameMenu.started += instance.OnHideGameMenu;
                 @HideGameMenu.performed += instance.OnHideGameMenu;
                 @HideGameMenu.canceled += instance.OnHideGameMenu;
-            }
-        }
-    }
-    public MenuActions @Menu => new MenuActions(this);
-
-    // Testing
-    private readonly InputActionMap m_Testing;
-    private ITestingActions m_TestingActionsCallbackInterface;
-    private readonly InputAction m_Testing_Spacebar;
-    public struct TestingActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public TestingActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Spacebar => m_Wrapper.m_Testing_Spacebar;
-        public InputActionMap Get() { return m_Wrapper.m_Testing; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TestingActions set) { return set.Get(); }
-        public void SetCallbacks(ITestingActions instance)
-        {
-            if (m_Wrapper.m_TestingActionsCallbackInterface != null)
-            {
-                @Spacebar.started -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
-                @Spacebar.performed -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
-                @Spacebar.canceled -= m_Wrapper.m_TestingActionsCallbackInterface.OnSpacebar;
-            }
-            m_Wrapper.m_TestingActionsCallbackInterface = instance;
-            if (instance != null)
-            {
+                @OpenGameMenu.started += instance.OnOpenGameMenu;
+                @OpenGameMenu.performed += instance.OnOpenGameMenu;
+                @OpenGameMenu.canceled += instance.OnOpenGameMenu;
                 @Spacebar.started += instance.OnSpacebar;
                 @Spacebar.performed += instance.OnSpacebar;
                 @Spacebar.canceled += instance.OnSpacebar;
             }
         }
     }
-    public TestingActions @Testing => new TestingActions(this);
+    public UIActions @UI => new UIActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1269,14 +1199,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
-    }
-    public interface IMenuActions
-    {
-        void OnOpenGameMenu(InputAction.CallbackContext context);
         void OnHideGameMenu(InputAction.CallbackContext context);
-    }
-    public interface ITestingActions
-    {
+        void OnOpenGameMenu(InputAction.CallbackContext context);
         void OnSpacebar(InputAction.CallbackContext context);
     }
 }

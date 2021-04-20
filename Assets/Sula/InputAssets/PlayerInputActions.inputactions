@@ -336,6 +336,30 @@
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "HideGameMenu",
+                    "type": "Value",
+                    "id": "11d04bb7-a358-4a42-8fb3-5b6b2714ecea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "OpenGameMenu",
+                    "type": "Value",
+                    "id": "41da4546-e1b9-4f18-a87d-15eefb51b1c5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Spacebar",
+                    "type": "Button",
+                    "id": "cda18dbd-7bc3-499a-bc09-c45f5071fce2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -756,34 +780,10 @@
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Menu",
-            "id": "9bb8e54e-8ec4-45aa-8cd7-fb0c976ff997",
-            "actions": [
-                {
-                    "name": "OpenGameMenu",
-                    "type": "Value",
-                    "id": "dcce3706-bf19-417f-b6df-7f13902ab59e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 },
                 {
-                    "name": "HideGameMenu",
-                    "type": "Value",
-                    "id": "e58b5a3a-7041-4dea-9542-4fb6f7c682ad",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "f1c893e5-dace-4496-935b-cbca30bc2662",
+                    "id": "cad5947b-1439-4d54-9913-cac6c3721a95",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
@@ -794,7 +794,7 @@
                 },
                 {
                     "name": "",
-                    "id": "e9fcf273-738f-45b6-b2e2-3606ecf9cacf",
+                    "id": "83a2e8a1-a447-43e6-ae05-cf5bf7601647",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
@@ -802,26 +802,10 @@
                     "action": "HideGameMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Testing",
-            "id": "ca533821-97b1-4c07-bfdc-5fd2feee577a",
-            "actions": [
-                {
-                    "name": "Spacebar",
-                    "type": "Button",
-                    "id": "23ef86b4-a895-4017-b7d8-d577d0b267e5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "ad9a5750-9af5-47e9-88d2-e8c6c872bca9",
+                    "id": "ede80318-d48c-4278-a31f-444834bcb5a7",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",

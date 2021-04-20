@@ -9,9 +9,4 @@ public class TestPlayerStats : MonoBehaviour
     public int damagePU = 0;
     public int fireratePU = 0;
     public int defencePU = 0;
-
-
-
-
-
 }

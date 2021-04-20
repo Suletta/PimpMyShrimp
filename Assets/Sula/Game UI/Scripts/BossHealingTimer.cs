@@ -7,44 +7,8 @@ using UnityEngine.Events;
 
 public class BossHealingTimer : MonoBehaviour
 {
-    //[SerializeField]
-    //GameObject timerObj;
-    //TextMeshPro timerText;
-
-    //float timerDuration = 10f; //10 sec di timer
-    //bool countingDown = false;
-
-
-    //void Start()
-    //{
-    //    timerText = timerObj.GetComponent<TextMeshPro>();
-    //    timerObj.GetComponent<TextMeshPro>().text = timerDuration + " seconds";
-    //}
-
-    //void Update()
-    //{
-    //    if (countingDown == false && timerDuration > 0)
-    //    {
-    //        StartCoroutine("Countdown");
-    //    }
-
-    //}
-
-    //public IEnumerator Countdown()
-    //{
-    //    Debug.Log("parte il timer");
-    //    countingDown = true;
-
-    //    yield return new WaitForSeconds(1);
-
-    //    timerDuration -= 1;
-
-    //    timerText.text = timerDuration + " seconds";
-    //}
-
-
     [SerializeField]
-    bool activateTimer = false;
+    bool activateTimer = false; //POSSO USARLA PER PAUSARE IL TIMER
 
     float currentTime;
     public int startSeconds;
@@ -60,10 +24,12 @@ public class BossHealingTimer : MonoBehaviour
     }
 
     private void Update()
-    {     
+    {
         ActivateCountdown();
     }
 
+
+    //IL TIMER PARTE SOLO SE CHIAMO IL METODO CON LA BOOL ACTIVATE TIMER ATTIVA
     private void ActivateCountdown()
     {
         if (activateTimer)
@@ -79,8 +45,7 @@ public class BossHealingTimer : MonoBehaviour
                 activateTimer = false;
                 currentTime = startSeconds;
             }
-
-            
+         
         }
     }
 
