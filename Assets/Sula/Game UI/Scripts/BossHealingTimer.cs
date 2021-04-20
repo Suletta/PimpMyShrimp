@@ -28,7 +28,6 @@ public class BossHealingTimer : MonoBehaviour
         ActivateCountdown();
     }
 
-
     //IL TIMER PARTE SOLO SE CHIAMO IL METODO CON LA BOOL ACTIVATE TIMER ATTIVA
     private void ActivateCountdown()
     {
@@ -45,9 +44,7 @@ public class BossHealingTimer : MonoBehaviour
                 activateTimer = false;
                 currentTime = startSeconds;
             }
-         
+        
         }
     }
-
-
 }

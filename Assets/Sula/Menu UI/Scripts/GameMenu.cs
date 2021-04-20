@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
-
     [SerializeField]
     GameObject gameMenu;
     Canvas canvas;
@@ -15,13 +14,7 @@ public class GameMenu : MonoBehaviour
     {
         canvas = gameMenu.GetComponent<Canvas>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+   
     public void OpenGameMenu()
     {
         if (canvas.enabled == false)
@@ -33,9 +26,9 @@ public class GameMenu : MonoBehaviour
         canvas.enabled = true;
         Debug.Log("mostro");
         }
-
     }
 
+    //PER ORA NON SI USA
     public void HideGameMenu()
     {
         if (canvas.enabled)
@@ -44,7 +37,6 @@ public class GameMenu : MonoBehaviour
         canvas.enabled = false;
         Debug.Log("nascondo");
         }
-
     }
 
     public void QuitGame()
