@@ -1,15 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
+    // variables
+    [Tooltip("when active spawn bullet")]
     public bool spawn = true;
-    public Bullet bullet;
-    public float minRotation, maxRotation, rate, bulletSpeed;
+    [Tooltip("Bullet prefab")]
+    public AxolotlBullet bullet;
+    [Tooltip("Angle of spawn of bullet")]
+    public float minRotation, maxRotation;
+    [Tooltip("Time of spawn")]
+    public float rate;
+    public float bulletSpeed;
+    [Tooltip("Number of bullet spawned simultaneously")]
     public int numberOfBullet;
 
     private float timer = 0;
+    [Tooltip("Just don't touch")]
     public float[] rotations ;
 
     private void Update()
@@ -26,6 +33,7 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
+    // definisce la rotazione dei proiettili(la loro direzione)
     private float[] SetRotations()
     {
         for (int i = 0; i < numberOfBullet; i++)
@@ -43,7 +51,7 @@ public class BulletSpawner : MonoBehaviour
     {
         for (int i = 0; i < numberOfBullet; i++)
         {
-            Bullet b = Instantiate(bullet,new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler (0,0,0 ), transform );
+            AxolotlBullet b = Instantiate(bullet,new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler (0,0,0 ), transform );
             b.speed = bulletSpeed;
             b.rotation = rotations[i];
             Destroy(b.gameObject, 10);
