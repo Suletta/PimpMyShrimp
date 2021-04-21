@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SpriteRenderer))]
+public class AxolotlBullet : MonoBehaviour
 {
-    //public Vector2 velocity;
     public float speed;
     [HideInInspector]public float rotation;
     Rigidbody rb;
@@ -13,11 +14,15 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         transform.rotation = Quaternion.Euler(0, rotation, 0);
     }
+
     void Update()
     {
-        rb.velocity = transform.forward * speed*100 * Time.deltaTime;
+        rb.velocity = transform.forward * speed*100 * Time.deltaTime;    // move
         transform.localRotation = Quaternion.Euler(0, rotation, 0);
     }
+
+
+    // destroy on colllision
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Bullet"))
@@ -27,6 +32,8 @@ public class Bullet : MonoBehaviour
         }
     }
 
+
+    // destroy on exit of camera
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
