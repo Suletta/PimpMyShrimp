@@ -7,13 +7,16 @@ using UnityEngine.Events;
 
 public class BossHealingTimer : MonoBehaviour
 {
+    [Tooltip("Start/Pause timer")]
     [SerializeField]
     bool activateTimer = false; //POSSO USARLA PER PAUSARE IL TIMER
 
+    [Header("Timer Lenght")]
     float currentTime;
     public int startSeconds;
 
-    //text stuff
+    [Header("Text")]
+    [Tooltip("Add text game obj")]
     public GameObject textObj;
     TextMeshProUGUI textTMP;
 

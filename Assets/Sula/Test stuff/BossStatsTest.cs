@@ -5,11 +5,14 @@ using UnityEngine.InputSystem;
 
 public class BossStatsTest : MonoBehaviour
 {
+    [Header("Health")]
+    [Tooltip("Assign max health")]
     [SerializeField]
     int maxHealth;
     public int currentHealth;
 
     //REF alla barra per aggiornare la vita
+    [Tooltip("Add healthbar.")]
     [SerializeField]
     HealthBar healthBar;
 
