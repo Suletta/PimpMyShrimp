@@ -5,19 +5,27 @@ public class BulletSpawner : MonoBehaviour
     // variables
     [Tooltip("when active spawn bullet")]
     public bool spawn = true;
+    [Header("Bullet Variable")]
     [Tooltip("Bullet prefab")]
     public AxolotlBullet bullet;
-    [Tooltip("Angle of spawn of bullet")]
-    public float minRotation, maxRotation;
-    [Tooltip("Time of spawn")]
-    public float rate;
+    [Range(0, 100)]
     public float bulletSpeed;
+    [Header("Spawn Variable")]
+    [Tooltip("Min. Angle of spawn of bullet")]
+    public float minRotation;
+    [Tooltip("Max. Angle of spawn of bullet")]
+    public float maxRotation;
     [Tooltip("Number of bullet spawned simultaneously")]
+    [Range(0, 100)]
     public int numberOfBullet;
+    [Tooltip("Time of spawn")]
+    [Range(0f, 5f)]
+    public float rate;
 
     private float timer = 0;
     [Tooltip("Just don't touch")]
-    public float[] rotations ;
+    private float [] rotations = new float [100];
+
 
     private void Update()
     {

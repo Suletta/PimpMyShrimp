@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class AxelotlAttackSystem : MonoBehaviour
 {
+    [Tooltip("Bullet spawner animator")]
     public Animator animator;
+    [Tooltip("String of boolean parameters of the animator")]
     public string[] attack;
 
     int a,i;
