@@ -28,9 +28,24 @@ public class HealthBar : MonoBehaviour
     //refill graduale WIP fare courutine
     public void RefillHealth(int fullHealth)
     {
-        float t = 0 + Time.deltaTime;
+        StartCoroutine(Refill(fullHealth));
+        //float t = 0;
+        //t += Time.deltaTime;
+
+        //float currentHealth = slider.value;
+        //slider.value = Mathf.Lerp(currentHealth, fullHealth, t);
+    }
+
+    public IEnumerator Refill(int fullHealth)
+    {
+
+        float t = 0;
+        t += Time.deltaTime;
+        Debug.Log(t);
 
         float currentHealth = slider.value;
         slider.value = Mathf.Lerp(currentHealth, fullHealth, t);
+
+        yield return null;
     }
 }

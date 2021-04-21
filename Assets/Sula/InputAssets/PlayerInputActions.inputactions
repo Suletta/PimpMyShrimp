@@ -360,6 +360,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "RefillBossHealth",
+                    "type": "Button",
+                    "id": "d13f1f03-614e-43bd-9c07-2e56cf5b7fae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -811,6 +819,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Spacebar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02bf0496-b534-4a07-95b8-75fe127c3375",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RefillBossHealth",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

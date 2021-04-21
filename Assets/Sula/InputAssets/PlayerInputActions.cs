@@ -373,6 +373,14 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RefillBossHealth"",
+                    ""type"": ""Button"",
+                    ""id"": ""d13f1f03-614e-43bd-9c07-2e56cf5b7fae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -826,6 +834,17 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Spacebar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02bf0496-b534-4a07-95b8-75fe127c3375"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RefillBossHealth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -913,6 +932,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_UI_HideGameMenu = m_UI.FindAction("HideGameMenu", throwIfNotFound: true);
         m_UI_OpenGameMenu = m_UI.FindAction("OpenGameMenu", throwIfNotFound: true);
         m_UI_Spacebar = m_UI.FindAction("Spacebar", throwIfNotFound: true);
+        m_UI_RefillBossHealth = m_UI.FindAction("RefillBossHealth", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1024,6 +1044,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_HideGameMenu;
     private readonly InputAction m_UI_OpenGameMenu;
     private readonly InputAction m_UI_Spacebar;
+    private readonly InputAction m_UI_RefillBossHealth;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1041,6 +1062,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @HideGameMenu => m_Wrapper.m_UI_HideGameMenu;
         public InputAction @OpenGameMenu => m_Wrapper.m_UI_OpenGameMenu;
         public InputAction @Spacebar => m_Wrapper.m_UI_Spacebar;
+        public InputAction @RefillBossHealth => m_Wrapper.m_UI_RefillBossHealth;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1089,6 +1111,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Spacebar.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
                 @Spacebar.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
                 @Spacebar.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSpacebar;
+                @RefillBossHealth.started -= m_Wrapper.m_UIActionsCallbackInterface.OnRefillBossHealth;
+                @RefillBossHealth.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnRefillBossHealth;
+                @RefillBossHealth.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnRefillBossHealth;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1132,6 +1157,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Spacebar.started += instance.OnSpacebar;
                 @Spacebar.performed += instance.OnSpacebar;
                 @Spacebar.canceled += instance.OnSpacebar;
+                @RefillBossHealth.started += instance.OnRefillBossHealth;
+                @RefillBossHealth.performed += instance.OnRefillBossHealth;
+                @RefillBossHealth.canceled += instance.OnRefillBossHealth;
             }
         }
     }
@@ -1202,5 +1230,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnHideGameMenu(InputAction.CallbackContext context);
         void OnOpenGameMenu(InputAction.CallbackContext context);
         void OnSpacebar(InputAction.CallbackContext context);
+        void OnRefillBossHealth(InputAction.CallbackContext context);
     }
 }
