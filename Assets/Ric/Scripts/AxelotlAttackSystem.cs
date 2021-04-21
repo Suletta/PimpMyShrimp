@@ -23,7 +23,7 @@ public class AxelotlAttackSystem : MonoBehaviour
             i = Random.Range(0, attack.Length - 1);
             animator.SetBool(attack[i], true);
             timer = 0;
-            if(a!= 99)
+            if(a!= 99 && a != i)
             {
                 animator.SetBool(attack[a], false);
             }
