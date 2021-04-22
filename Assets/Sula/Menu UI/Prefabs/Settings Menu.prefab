@@ -1008,12 +1008,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9049296270062498885}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 3509208043371267948}
+        m_MethodName: SetResolution
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2095,6 +2095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: fb87447bf65ca354f81ca5cce61cbf47, type: 2}
+  resDropdown: {fileID: 4252360977513153003}
 --- !u!1 &9078787108230286929
 GameObject:
   m_ObjectHideFlags: 0
