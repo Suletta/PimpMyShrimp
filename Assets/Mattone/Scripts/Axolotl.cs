@@ -51,7 +51,7 @@ public class Axolotl : MonoBehaviour
             Debug.Log("prendo danno");
             Destroy(collision.gameObject);
             healthBar.UpdateHealth(Mathf.RoundToInt(hp));
-            if (hp == 0)
+            if (hp <= 0)
             {
                 SceneManager.LoadScene(3);
             }

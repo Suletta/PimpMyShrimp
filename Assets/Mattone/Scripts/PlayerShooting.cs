@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour
         if (gesu > 0.99f)
         {
             timer += Time.deltaTime;
-            if (timer >= fireRate)
+            if (timer >= 1/fireRate)
             {
                 timer = 0;
                 Instantiate(playerBullet, this.gameObject.transform.position, Quaternion.identity);
@@ -27,7 +27,7 @@ public class PlayerShooting : MonoBehaviour
         }
         if (gesu < 0.99f)
         {
-            timer = fireRate;
+            timer = 1/fireRate;
         }
     }
 

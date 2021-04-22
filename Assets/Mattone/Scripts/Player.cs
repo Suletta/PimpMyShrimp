@@ -86,11 +86,12 @@ public class Player : MonoBehaviour
 
     private void RateUP()
     {
-        shoot.fireRate -= rateUpgrade;
+        shoot.fireRate += rateUpgrade;
     }
 
     private void Armor()
     {
+        hp++;
         StopCoroutine(Invincibility());
         StartCoroutine(Invincibility());
     }

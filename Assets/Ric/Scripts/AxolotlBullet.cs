@@ -19,7 +19,7 @@ public class AxolotlBullet : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = transform.forward * speed*100 * Time.deltaTime;    // move
+        rb.velocity = transform.forward * speed * 70 * Time.deltaTime;    // move
         transform.localRotation = Quaternion.Euler(0, rotation, 0);
     }
 
