@@ -673,6 +673,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2339168557864362164, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
+      propertyPath: m_text
+      value: 'WASD to move
+
+        Spacebar to shoot
+
+        ESC to open menu'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339168557864362164, guid: e3b99515f9381ca429315451450b0374,
+        type: 3}
       propertyPath: m_fontSize
       value: 30
       objectReference: {fileID: 0}
@@ -685,6 +694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158555613281428208, guid: e3b99515f9381ca429315451450b0374,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 234
       objectReference: {fileID: 0}
     - target: {fileID: 3158555613281428208, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
@@ -831,6 +845,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3404325548865448670, guid: e3b99515f9381ca429315451450b0374,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
       propertyPath: m_text
@@ -847,7 +866,7 @@ PrefabInstance:
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
       propertyPath: m_lineSpacing
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}

@@ -15,6 +15,7 @@ public class Axolotl : MonoBehaviour
     public Player player;
     public HealthBar healthBar;
     public TMP_Text bossTimer;
+    public GameObject vfx;
 
     void Start()
     {
@@ -47,6 +48,8 @@ public class Axolotl : MonoBehaviour
 
         if (collision.tag == "ShrimpBullet")
         {
+            GameObject q = Instantiate(vfx, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.Euler(0, 0, 0));
+            Destroy(q, 0.5f);
             hp -= player.bulletDamage;
             Debug.Log("prendo danno");
             Destroy(collision.gameObject);
