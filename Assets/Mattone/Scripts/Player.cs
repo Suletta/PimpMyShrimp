@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int startHp;
-    int hp;
+    public int hp;
     public PlayerShooting shoot;
     public float bulletDamage;
     public float bulletCooldown;
-    float bulletTimer;
+    public float bulletTimer;
     public float dmgUpgrade;
     public float rateUpgrade;
     public float invincibilityTime;
@@ -27,26 +27,32 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "AxolotlBullet" && bulletTimer <= 0 && invincibilty==false)
+        if (collision.tag == "Bullet" && bulletTimer <= 0 && invincibilty==false)
         {
             hp -= 1;
             print(hp);
             bulletTimer = bulletCooldown;
         }
 
-        if (collision.tag == "DmgUp")
+        if (collision.CompareTag("DmgUp"))
         {
             DmgUP();
+            Destroy(collision.gameObject);
+            Debug.Log("DmgUp");
         }
 
-        if (collision.tag == "RateUp")
+        if (collision.CompareTag("RateUp"))
         {
             RateUP();
+            Destroy(collision.gameObject);
+            Debug.Log("RateUp");
         }
 
-        if (collision.tag == "Armor")
+        if (collision.CompareTag("Armor"))
         {
             Armor();
+            Destroy(collision.gameObject);
+            Debug.Log("Armor");
         }
     }
 

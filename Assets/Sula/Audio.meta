@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sula/Audio.meta
 guid: 4da8697d41bb80146be58321ba9af7fb
+=======
+guid: 15f5fb5f59cc68e43bdef115c070192e
+>>>>>>> Mattonev2:Assets/Mattone/Sprites/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
