@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class AxolotlBullet : MonoBehaviour
 {
     public float speed;
+    public GameObject vfx;
     [HideInInspector]public float rotation;
     Rigidbody rb;
 
@@ -27,8 +29,14 @@ public class AxolotlBullet : MonoBehaviour
     {
         if (!other.CompareTag("Bullet"))
         {
+            if (other.CompareTag("Player"))
+            {
+                GameObject q = Instantiate(vfx, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0, 0, 0));
+                Destroy(q, 10f);
+            }
             Destroy(gameObject);
             Debug.Log("destroy bullet");
+
         }
     }
 

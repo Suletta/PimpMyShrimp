@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  vfx: {fileID: 4998396119757841347, guid: 21ef5a936674e3b438e4868b96a54efc, type: 3}
   rotation: 0
 --- !u!65 &490618816962158025
 BoxCollider:
