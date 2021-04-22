@@ -874,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 3404325548865448670, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
@@ -882,12 +882,17 @@ PrefabInstance:
       value: "~GAMEJAM DREAM TEAM~\n\nModellazione\n\u2022 Chiara Mazzarese\nConcepts
         & arts\n\u2022 Florencia Mariana Orosco Bonelli\n\u2022 Luca Malacarne\nShader
         & VFX\n\u2022 Luca Guernier\nScript\n\u2022 Matteo Gastaldi\n\u2022 Riccardo
-        Serafin\n\u2022 Sula Chiovenda\n\n"
+        Serafin\n\u2022 Sula Chiovenda\n\nBackground music via https://www.FesliyanStudios.com\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -141.75616
       objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
@@ -897,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3404325548865448671, guid: e3b99515f9381ca429315451450b0374,
         type: 3}
