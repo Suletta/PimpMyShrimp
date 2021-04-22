@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Axolotl : MonoBehaviour
@@ -31,6 +32,7 @@ public class Axolotl : MonoBehaviour
         {
             hp = startHp;
             timer = rechargeTime;
+            healthBar.UpdateHealth(Mathf.RoundToInt(hp));
             bossTimer.text = timer.ToString("F2");
         }
     }
@@ -49,6 +51,10 @@ public class Axolotl : MonoBehaviour
             Debug.Log("prendo danno");
             Destroy(collision.gameObject);
             healthBar.UpdateHealth(Mathf.RoundToInt(hp));
+            if (hp == 0)
+            {
+                SceneManager.LoadScene(3);
+            }
         }
     }
 }

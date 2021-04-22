@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float rateUpgrade;
     public float invincibilityTime;
     public bool invincibilty = false;
+    public GameObject shell;
     
     public int dmgpwrN=0;
     public int frrtN=0;
@@ -29,6 +30,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         bulletTimer -= Time.deltaTime;
+        if (invincibilty == true)
+        {
+            shell.gameObject.SetActive(true);
+        }
+        else
+        {
+            shell.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
