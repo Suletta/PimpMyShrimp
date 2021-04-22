@@ -174,8 +174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -713.2, y: -370}
-  m_SizeDelta: {x: 581.6041, y: 863.33234}
+  m_AnchoredPosition: {x: -713.2, y: -180.7}
+  m_SizeDelta: {x: 581.6041, y: 484.6336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6142035924118389353
 CanvasRenderer:
@@ -1162,8 +1162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 351}
-  m_SizeDelta: {x: 800, y: 200}
+  m_AnchoredPosition: {x: 0, y: 413}
+  m_SizeDelta: {x: 800, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4034724795834968501
 CanvasRenderer:
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TimePura!
+  m_text: "TimePura \nEbi!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7bc37e6963278346b6cd37e497a8ebe, type: 2}
   m_sharedMaterial: {fileID: 3366606823822100499, guid: b7bc37e6963278346b6cd37e497a8ebe,
