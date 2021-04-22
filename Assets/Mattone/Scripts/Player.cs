@@ -34,22 +34,25 @@ public class Player : MonoBehaviour
             bulletTimer = bulletCooldown;
         }
 
-        if (collision.tag == "DmgUp")
+        if (collision.CompareTag("DmgUp"))
         {
             DmgUP();
             Destroy(collision.gameObject);
+            Debug.Log("DmgUp");
         }
 
-        if (collision.tag == "RateUp")
+        if (collision.CompareTag("RateUp"))
         {
             RateUP();
             Destroy(collision.gameObject);
+            Debug.Log("RateUp");
         }
 
-        if (collision.tag == "Armor")
+        if (collision.CompareTag("Armor"))
         {
             Armor();
             Destroy(collision.gameObject);
+            Debug.Log("Armor");
         }
     }
 

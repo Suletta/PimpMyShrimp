@@ -15,7 +15,7 @@ public class PowerUpSpawner : MonoBehaviour
         if (timer>maxTime)
         {
             timer = 0;
-            Instantiate(powerUps[Random.Range(0, 2)], new Vector3(Random.Range(-5.5f, 5.5f),5,0), Quaternion.identity);
+            Instantiate(powerUps[Random.Range(0, 3)], new Vector3(Random.Range(-5.5f, 5.5f),5,0), Quaternion.identity);
         }
     }
 }

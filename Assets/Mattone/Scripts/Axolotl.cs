@@ -29,9 +29,11 @@ public class Axolotl : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("Porcodio");
         if (collision.tag == "ShrimpBullet")
         {
             hp -= player.bulletDamage;
+            Debug.Log("prendo danno");
             Destroy(collision.gameObject);
         }
     }

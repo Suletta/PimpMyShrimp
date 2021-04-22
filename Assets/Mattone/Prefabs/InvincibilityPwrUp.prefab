@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1574259536767173721}
   - component: {fileID: 1574259536767173722}
   - component: {fileID: 7985276832721301993}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InvincibilityPwrUp
-  m_TagString: Untagged
+  m_TagString: Armor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 628799d94ae6dc047b650bf3dc180c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04099a4a2e4ef4b42810d08cbe59624f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerSpeed: 5
-  lifetime: 4
+  powerSpeed: 2
+  lifetime: 7

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - ShrimpBullet
+  - RateUp
+  - DmgUp
+  - Armor
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8929507263338074042}
   - component: {fileID: 8929507263338074043}
   m_Layer: 11
-  m_Name: BULLET_POWERUP_Bolla
+  m_Name: ShrimpBullet
   m_TagString: ShrimpBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
