@@ -91,7 +91,6 @@ public class Player : MonoBehaviour
 
     private void Armor()
     {
-        hp++;
         StopCoroutine(Invincibility());
         StartCoroutine(Invincibility());
     }
