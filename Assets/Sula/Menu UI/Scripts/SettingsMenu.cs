@@ -14,7 +14,6 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         GetResolution();
-
     }
 
     private void GetResolution()
@@ -50,7 +49,14 @@ public class SettingsMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         //audioMixer.SetFloat("volume", volume);
-        audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
+        if (volume == -40f)
+        {
+            audioMixer.SetFloat("volume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("volume", volume);
+        }
     }
 
     public void SetResolution()
