@@ -440,7 +440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102541370}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 843421f8996ea4d42a8cc3520755d55c, type: 3}
   m_Name: 
@@ -453,6 +453,9 @@ MonoBehaviour:
   - B4
   - B5
   - B6
+  - B3-1
+  - B7
+  - B8
 --- !u!1001 &4965973328775726546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,7 +546,7 @@ PrefabInstance:
     - target: {fileID: 4965973329009330127, guid: 67dab7ef83586fd44bf12d75066d1269,
         type: 3}
       propertyPath: numberOfBullet
-      value: 14
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4965973330045698752, guid: 67dab7ef83586fd44bf12d75066d1269,
         type: 3}
