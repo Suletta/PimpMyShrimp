@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using TMPro;
 
 public class Axolotl : MonoBehaviour
 {
@@ -11,30 +12,43 @@ public class Axolotl : MonoBehaviour
     public float timer;
     public float rechargeTime;
     public Player player;
+    public HealthBar healthBar;
+    public TMP_Text bossTimer;
 
     void Start()
     {
         hp = startHp;
+        healthBar.SetMaxHealth(Mathf.RoundToInt(startHp));
+        timer = rechargeTime;
+        bossTimer.text = timer.ToString("F2");
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > rechargeTime)
+        timer -= Time.deltaTime;
+        bossTimer.text = timer.ToString("F2");
+        if (timer < 0)
         {
             hp = startHp;
-            timer = 0;
+            timer = rechargeTime;
+            bossTimer.text = timer.ToString("F2");
         }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Porcodio");
+        TakeDamage(collision);
+    }
+
+    void TakeDamage(Collider collision)
+    {
+
         if (collision.tag == "ShrimpBullet")
         {
             hp -= player.bulletDamage;
             Debug.Log("prendo danno");
             Destroy(collision.gameObject);
+            healthBar.UpdateHealth(Mathf.RoundToInt(hp));
         }
     }
 }

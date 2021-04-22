@@ -23,7 +23,7 @@ public class UpdatePlayerStats : MonoBehaviour
 
     //PRENDERE REF DELLO SCRIPT DEL PLAYER CON TUTTE LE STATS
     [SerializeField]
-    TestPlayerStats playerStats;
+    Player playerStats;
 
 
     void Start()
@@ -31,14 +31,14 @@ public class UpdatePlayerStats : MonoBehaviour
         GetUiElements();
 
         // Setto tutti i valori in start
-        UpdateHearts(playerStats.playerLives);
-        UpdateDamageValue(playerStats.playerDamage);
+        UpdateHearts(playerStats.hp);
+        UpdateDamageValue(Mathf.RoundToInt(playerStats.bulletDamage));
 
         //le string servono a "taggare" il tipo di power-up per essere utilizzati come casi nello switch
         //è un po un meme ma vabbè, mi andava di usare quello
-        UpdatePowerUps(playerStats.damagePU, "damage");
-        UpdatePowerUps(playerStats.fireratePU, "firerate");
-        UpdatePowerUps(playerStats.defencePU, "defence");
+        UpdatePowerUps(playerStats.dmgpwrN, "damage");
+        UpdatePowerUps(playerStats.frrtN, "firerate");
+        UpdatePowerUps(playerStats.defenseN, "defence");
 
     }
 

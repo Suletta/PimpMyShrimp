@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int startHp;
-    public int hp;
+    public int hp=4;
     public PlayerShooting shoot;
     public float bulletDamage;
     public float bulletCooldown;
@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
     public float rateUpgrade;
     public float invincibilityTime;
     public bool invincibilty = false;
+    
+    public int dmgpwrN=0;
+    public int frrtN=0;
+    public int defenseN=0;
+
+    public UpdatePlayerStats updateStats;
 
     void Start()
     {
@@ -32,6 +38,7 @@ public class Player : MonoBehaviour
             hp -= 1;
             print(hp);
             bulletTimer = bulletCooldown;
+            updateStats.UpdateHearts(hp);
         }
 
         if (collision.CompareTag("DmgUp"))
@@ -39,6 +46,9 @@ public class Player : MonoBehaviour
             DmgUP();
             Destroy(collision.gameObject);
             Debug.Log("DmgUp");
+            updateStats.UpdateDamageValue(Mathf.RoundToInt(bulletDamage));
+            dmgpwrN++;
+            updateStats.UpdatePowerUps(dmgpwrN, "damage");
         }
 
         if (collision.CompareTag("RateUp"))
@@ -46,6 +56,8 @@ public class Player : MonoBehaviour
             RateUP();
             Destroy(collision.gameObject);
             Debug.Log("RateUp");
+            frrtN++;
+            updateStats.UpdatePowerUps(frrtN, "firerate");
         }
 
         if (collision.CompareTag("Armor"))
@@ -53,6 +65,8 @@ public class Player : MonoBehaviour
             Armor();
             Destroy(collision.gameObject);
             Debug.Log("Armor");
+            defenseN++;
+            updateStats.UpdatePowerUps(defenseN, "defence");
         }
     }
 
@@ -63,11 +77,12 @@ public class Player : MonoBehaviour
 
     private void RateUP()
     {
-        shoot.fireRate += rateUpgrade;
+        shoot.fireRate -= rateUpgrade;
     }
 
     private void Armor()
     {
+        StopCoroutine(Invincibility());
         StartCoroutine(Invincibility());
     }
 
@@ -76,5 +91,7 @@ public class Player : MonoBehaviour
         invincibilty = true;
         yield return new WaitForSeconds(invincibilityTime);
         invincibilty = false;
+        defenseN--;
+        updateStats.UpdatePowerUps(defenseN, "defence");
     }
 }
