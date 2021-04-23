@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sula/Scenes/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: a3b7032119281f843b217db8c86cb346
   - enabled: 1
-    path: Assets/Mattone/GAMESCENEFINAL.unity
+    path: Assets/Scenes/GAMESCENEFINAL.unity
     guid: 6c4be54b70d4e84409da41f72d34f975
   - enabled: 1
-    path: Assets/Sula/Scenes/GameOver.unity
+    path: Assets/Scenes/GameOver.unity
     guid: 94ddb8c6f43a8034a9d0be96b25986d0
   - enabled: 1
-    path: Assets/Sula/Scenes/GameWin.unity
+    path: Assets/Scenes/GameWin.unity
     guid: 20a56f9ca2f72a345b09acdea7e37661
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6747862f0f4128747aff7be8d0530845,
